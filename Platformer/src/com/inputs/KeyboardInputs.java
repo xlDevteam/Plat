@@ -3,7 +3,15 @@ package com.inputs;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import com.GamePanel;
+
 public class KeyboardInputs implements KeyListener {
+	
+	private GamePanel gamePanel;
+	
+	public KeyboardInputs(GamePanel gamePanel) {
+		this.gamePanel = gamePanel;
+	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -14,7 +22,25 @@ public class KeyboardInputs implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("A key has been pressed!");
+		switch(e.getKeyCode()) {
+			case KeyEvent.VK_W:
+				System.out.println("W");
+				gamePanel.changeYDelta(-5);
+				break;
+			case KeyEvent.VK_A:
+				System.out.println("A");
+				gamePanel.changeXDelta(-5);
+				break;
+			case KeyEvent.VK_S:
+				System.out.println("S");
+				gamePanel.changeYDelta(5);
+				break;
+			case KeyEvent.VK_D:
+				System.out.println("D");
+				gamePanel.changeXDelta(5);
+				break;
+			
+		}
 	}
 
 	@Override
