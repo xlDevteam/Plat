@@ -24,7 +24,6 @@ public class MouseInputs implements MouseListener, MouseMotionListener {
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
 		System.out.println("Mouse Move");
-		gamePanel.setRecPos(e.getX(), e.getY());
 	}
 
 	@Override
